@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {Observable} from 'rxjs';
+import {map, shareReplay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav',
@@ -16,18 +16,26 @@ export class NavComponent implements OnInit, OnDestroy {
       'link': 'home'
     },
     {
+      'label': 'CodersX',
+      'link': 'play-ground/coders-x'
+    },
+    {
       'label': 'Angular Material',
       'link': 'play-ground/angular-material'
     },
     {
       'label': 'RxJs',
-      'link' : 'play-ground/rxjs'
+      'link': 'play-ground/rxjs'
+    },
+    {
+      'label': 'RegEx',
+      'link': '#'
     },
     {
       'label': 'CSS',
-      'link' : 'play-ground/css'
+      'link': 'play-ground/css'
     }
-  ]
+  ];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -35,7 +43,8 @@ export class NavComponent implements OnInit, OnDestroy {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver) {
+  }
 
   ngOnInit() {
     console.log('ngOnInit');

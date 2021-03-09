@@ -1,3 +1,4 @@
+import { CodersxComponent } from './codersx/codersx.component';
 import { PlRxjsComponent } from './pl-rxjs/pl-rxjs.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,6 +8,10 @@ const ROUTES: Routes = [
   {
     path: 'rxjs',
     component: PlRxjsComponent
+  },
+  {
+    path: 'coders-x',
+    component: CodersxComponent
   }
 ]
 

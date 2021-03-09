@@ -1,9 +1,8 @@
-import { NoContentComponent } from './no-content/no-content.component';
-import { PlayGroundModule } from './play-ground/play-ground.module';
-import { HomeComponent } from './home/home.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import {NoContentComponent} from './no-content/no-content.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from './home/home.component';
 
 const ROUTES: Routes = [
   {
@@ -17,13 +16,13 @@ const ROUTES: Routes = [
   },
   {
     path: 'play-ground',
-    loadChildren: () => import('./play-ground/play-ground-routing.module').then( m => m.PlayGroundRoutingModule)
+    loadChildren: () => import('./play-ground/play-ground-routing.module').then(m => m.PlayGroundRoutingModule)
   },
   {
     path: '**',
     component: NoContentComponent
   }
-]
+];
 
 @NgModule({
   declarations: [],
@@ -35,4 +34,5 @@ const ROUTES: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
